@@ -23,7 +23,7 @@ export default function ButtonDropdown({
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const handleClickOutside = (e: PointerEvent) => {
+        const handleClickOutside = (e: MouseEvent) => {
             if (e.target instanceof HTMLElement && !ref.current?.contains(e.target)) {
                 setOpen(false);
                 if (onOpenChange) {
