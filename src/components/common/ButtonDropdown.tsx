@@ -36,6 +36,7 @@ export default function ButtonDropdown({
         return () => {
             document.removeEventListener("click", handleClickOutside);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
