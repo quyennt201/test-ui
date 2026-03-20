@@ -26,7 +26,7 @@ const statItems: StatItemProps[] = [
 
 export default function TopStats() {
   return (
-    <div className="flex flex-nowrap gap-4 bg-linear-to-t from-gray-500 to-gray-400 rounded-2xl p-6 w-full">
+    <div className="flex flex-nowrap gap-4 bg-gray-dark rounded-2xl p-6 w-full">
       {statItems.map((item) => (
         <StatItem key={item.title} {...item} />
       ))}

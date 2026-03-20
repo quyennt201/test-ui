@@ -9,6 +9,7 @@ import {
   AreaChart,
   XAxis,
 } from "recharts";
+import ButtonDropdown from "./common/ButtonDropdown";
 
 const chartData = [
   { name: "Jan", value1: 3000, value2: 2000 },
@@ -59,58 +60,60 @@ function SelectTransactionButton() {
   }, []);
 
   return (
-    <div className="relative">
-      <button
-        onClick={() => setOpenSelection(!openSelection)}
-        className="select-transaction-button flex items-center gap-2 px-3 py-1 min-w-56 justify-center rounded-full border border-white/60 capitalize"
-      >
-        {selectedTransaction} Transactions{" "}
-        <ChevronDown
-          className={clsx(
-            "size-4 transition-transform duration-200",
-            openSelection ? "rotate-180" : "",
-          )}
-        />
-      </button>
-      <div
-        className={clsx(
-          "absolute top-[120%] left-0 w-full bg-white/20 backdrop-blur-lg border border-white/10 rounded-2xl p-2 transition-opacity duration-200",
-          openSelection ? "opacity-100" : "opacity-0 pointer-events-none",
-        )}
-      >
-        <button
-          onClick={() => {
-            setSelectedTransaction("all");
-            setOpenSelection(false);
-          }}
-          className="w-full py-2 px-4 rounded-md hover:bg-white/10 text-sm flex items-center gap-2 justify-start"
+    <div className="relative select-transaction-button">
+      <ButtonDropdown isOpen={openSelection} onOpenChange={setOpenSelection} align="right" trigger={
+        <div
+          onClick={() => setOpenSelection(true)}
+          className="flex items-center gap-2 px-3 py-1 min-w-56 justify-center rounded-full border border-white/60 capitalize"
         >
-          All Transactions
-          {selectedTransaction === "all" && <CheckIcon className="size-4" />}
-        </button>
-        <button
-          onClick={() => {
-            setSelectedTransaction("income");
-            setOpenSelection(false);
-          }}
-          className="w-full py-2 px-4 rounded-md hover:bg-white/10 text-sm flex items-center gap-2 justify-start"
+          {selectedTransaction} Transactions{" "}
+          <ChevronDown
+            className={clsx(
+              "size-4 transition-transform duration-200",
+              openSelection ? "rotate-180" : "",
+            )}
+          />
+        </div>
+      }>
+        <div
+          className="h-full overflow-y-auto custom-scrollbar"
         >
-          Income Transactions
-          {selectedTransaction === "income" && <CheckIcon className="size-4" />}
-        </button>
-        <button
-          onClick={() => {
-            setSelectedTransaction("expense");
-            setOpenSelection(false);
-          }}
-          className="w-full py-2 px-4 rounded-md hover:bg-white/10 text-sm flex items-center gap-2 justify-start"
-        >
-          Expense Transactions
-          {selectedTransaction === "expense" && (
-            <CheckIcon className="size-4" />
-          )}
-        </button>
-      </div>
+          <div
+            onClick={() => {
+              setSelectedTransaction("all");
+              setOpenSelection(false);
+            }}
+            className="w-full cursor-pointer py-2 px-4 rounded-md hover:bg-white/10 text-sm flex items-center gap-2 justify-start"
+          >
+            All Transactions
+            {selectedTransaction === "all" && <CheckIcon className="size-4" />}
+          </div>
+          <div
+            onClick={() => {
+              setSelectedTransaction("income");
+              setOpenSelection(false);
+            }}
+            className="w-full cursor-pointer py-2 px-4 rounded-md hover:bg-white/10 text-sm flex items-center gap-2 justify-start"
+          >
+            Income Transactions
+            {selectedTransaction === "income" && <CheckIcon className="size-4" />}
+          </div>
+          <div
+            onClick={() => {
+              setSelectedTransaction("expense");
+              setOpenSelection(false);
+            }}
+            className="w-full cursor-pointer py-2 px-4 rounded-md hover:bg-white/10 text-sm flex items-center gap-2 justify-start"
+          >
+            Expense Transactions
+            {selectedTransaction === "expense" && (
+              <CheckIcon className="size-4" />
+            )}
+          </div>
+        </div>
+      </ButtonDropdown>
+
+
     </div>
   );
 }
