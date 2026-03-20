@@ -6,7 +6,7 @@ export default function Notification({ hasNotification = true }) {
     <ButtonDropdown
       trigger={
         <div className="relative">
-          <BellIcon className="size-5" />
+          <BellIcon className="size-5 hover:scale-110 transition-transform duration-100" />
           {hasNotification && (
             <div className="absolute top-0 right-0 size-2 bg-red-500 rounded-full" />
           )}

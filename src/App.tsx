@@ -2,7 +2,7 @@ import DashboardPage from "./pages/DashboardPage";
 
 export default function App() {
   return (
-    <div className="h-screen w-full flex items-center justify-center p-6 overflow-hidden">
+    <div className="h-screen w-full flex items-center justify-center p-6">
       <DashboardPage />
 
       <div className="h-screen w-full fixed inset-0">

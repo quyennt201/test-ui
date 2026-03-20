@@ -120,7 +120,7 @@ function SelectTransactionButton() {
 
 function StatisticsContent() {
   return (
-    <div className="w-full flex-1 bg-white/5 rounded-2xl backdrop-blur-2xl p-8 flex flex-col">
+    <div className="w-full h-60 bg-white/5 rounded-2xl backdrop-blur-2xl p-8 flex flex-col">
       <div className="flex items-center justify-between gap-4">
         <div className="space-y-1">
           <p className="font-medium text-lg">Top Contributors</p>

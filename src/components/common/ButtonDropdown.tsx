@@ -46,7 +46,12 @@ export default function ButtonDropdown({
 
     return (
         <div className="relative" ref={ref}>
-            <div onClick={() => setOpen((prev) => !prev)} className="cursor-pointer">
+            <div onClick={() => {
+                setOpen((prev) => !prev)
+                if (onOpenChange) {
+                    onOpenChange(!open)
+                }
+            }} className="cursor-pointer">
                 {trigger}
             </div>
 

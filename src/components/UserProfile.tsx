@@ -12,7 +12,7 @@ import MoreButton from "./MoreButton";
 
 export default function UserProfile() {
   return (
-    <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 space-y-6">
+    <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 pb-10 space-y-6">
       <div className="flex items-center justify-between">
         <Notification />
         <MoreButton />

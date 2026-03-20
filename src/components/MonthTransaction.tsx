@@ -46,10 +46,10 @@ export default function MonthTransaction() {
           <TransactionItem key={item.title} {...item} />
         ))}
       </div>
-      <button className="py-2.5 px-5 text-white/80 bg-white/5 backdrop-blur-xl rounded-xl flex items-center justify-between gap-2">
+      <button className="py-2.5 px-5  group text-white/80 bg-white/5 backdrop-blur-xl rounded-xl flex items-center justify-between gap-2">
         <span>See all transactions</span>
-        <span className="size-6 flex items-center justify-center bg-white rounded-full text-black">
-          <ArrowRightIcon className="size-4" />
+        <span className="size-6 flex items-center justify-center bg-white rounded-full text-black group-hover:translate-x-1 transition-transform duration-100">
+          <ArrowRightIcon className="size-4 group-hover:scale-125 transition-transform duration-100" />
         </span>
       </button>
     </div>
