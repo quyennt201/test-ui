@@ -26,7 +26,7 @@ const statItems: StatItemProps[] = [
 
 export default function TopStats() {
   return (
-    <div className="flex flex-nowrap gap-4 bg-gray-dark rounded-2xl p-6 w-full">
+    <div className="flex sm:flex-nowrap flex-col sm:flex-row gap-4 sm:bg-gray-dark rounded-2xl sm:p-6  p-0 w-full">
       {statItems.map((item) => (
         <StatItem key={item.title} {...item} />
       ))}
@@ -36,7 +36,7 @@ export default function TopStats() {
 
 function StatItem({ title, value, icon }: StatItemProps) {
   return (
-    <div className="flex flex-1 items-center gap-3 overflow-hidden">
+    <div className="flex flex-1 items-center gap-3 overflow-hidden bg-white/10 backdrop-blur-2xl border border-white/10 sm:border-none sm:bg-transparent py-2 sm:p-0 px-4 rounded-2xl">
       <div className="size-10 shrink-0 flex items-center justify-center bg-gray-500 rounded-full">
         {icon}
       </div>

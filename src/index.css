@@ -3,6 +3,7 @@
 @theme {
   --color-primary: oklch(66.6% 0.179 58.318);
   --color-gray-dark: #4e4e4e;
+  --breakpoint-sm: 640px;
 }
 
 @layer base {
